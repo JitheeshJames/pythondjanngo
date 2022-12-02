@@ -1,0 +1,38 @@
+body
+{
+    background-image: linear-gradient(to right top, rgb(252, 44, 119) 0%, rgb(108, 64, 121) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+/*** Cart page css details ***/
+
+.custom_my_table
+{
+    min-width:400px;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.my_custom_table_head
+{
+    font-weight:normal;
+    text_transform:uppercase;
+    letter_spacing:2em;
+    background-color:white;
+}
+
+.my_custom_button
+{
+    margin-top:5px;
+    size:20px;
+}

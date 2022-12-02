@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<form method="POST" enctype="multipart/form-data" style="padding:200px">
+  {% csrf_token %}
+  Do you want to delete this movie?
+  <input type="submit">
+</form>
+{% endblock %}
