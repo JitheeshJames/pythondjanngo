@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    We have Variety streams of filims and Series available for entertain
+{% endblock %}
+{% block title %}
+    Search
+{% endblock %}
+{% block contents %}
+<div>
+    <div>
+        <p><a href="{% url 'ecom:allProdCat' %}">Home</a> | <a href="{{product.category.get_url}}">{{product.category}}</a> | {{product.name}}</p>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 shadow" style="margin-bottom:10px;">
+            <img src= "{{product.image.url}}" height="300px" width="300px" alt="{{product.name}}">
+        </div>
+        <div class="col-md-8">
+        <h2>{{product.name}}</h2>
+        <p>$ {{product.price}}</p>
+        <p>Product Description: {{product.desc}}</p>
+            {% if product.stock <= 0 %}
+            <p class="btn btn-info"> Item is out of stock</p>
+            {% else %}
+                <div class="p-t-15">
+                    <a class="btn btn-success"href="" >Buy</a>
+                    <a class="btn btn-warning"href="{% url 'cartapp:add_cart' product.id %}" >Add to cart</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

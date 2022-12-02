@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+    .card-deck {
+        height: 4rem;
+        row-gap: 20px;
+        margin: 0 auto;
+    }
+</style>
+<div class="p-t-15"  style="float:right">
+    <a class="btn btn-primary"href="{% url 'movieapp:add' %}">Add Movies</a>
+</div>
+<div class="container" style="padding:50px">
+    <div class="card-deck" >
+            {% for i in movies_list %}
+            <div class="row">
+                <div class="col">
+                    <div class="card-block">
+                        <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="{{i.img.url}}" alt="Movie image" height="250">
+                            <div class="card-body">
+                            <h5 class="card-title">{{i.name}}</h5><br>
+                            <a href="{% url 'movieapp:detail' i.id %}" class="card-link btn btn-warning">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
